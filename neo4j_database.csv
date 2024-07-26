@@ -1,0 +1,59 @@
+Name,node label (normé),linked to (normé),type_of_link (normé),label_linked_to (normé),Properties_nom,Properties_linked_to
+David Tchekachev,person,epita,to_complete,ecole,"Rencontré lors de l'audit de l'epita à lyon en juillet 2024. Profil business qui part en audit chez deloitte, a eu une offre de google mais problème administratif de google","ecole auditée à paris (2j), 1j à lyon en présentiel & 1j à toulouse en distanciel"
+David Tchekachev,person,CTI,to_complete,association,"Rencontré lors de l'audit de l'epita à lyon en juillet 2024. Profil business qui part en audit chez deloitte, a eu une offre de google mais problème administratif de google",Pas de description actuelle pour cette node
+David Tchekachev,person,Lyon,to_complete,lieu,"Rencontré lors de l'audit de l'epita à lyon en juillet 2024. Profil business qui part en audit chez deloitte, a eu une offre de google mais problème administratif de google",Pas de description actuelle pour cette node
+Paul Lelégard,person,kyndryl,to_complete,entreprise,to complete,Pas de description actuelle pour cette node
+Paul Lelégard,person,paris,to_complete,lieu,to complete,Pas de description actuelle pour cette node
+Marc Harb,person,paris,to_complete,lieu,to complete,Pas de description actuelle pour cette node
+Marc Harb,person,kyndryl,to_complete,entreprise,to complete,Pas de description actuelle pour cette node
+Charles,person,kyndryl,works,entreprise,to complete,Pas de description actuelle pour cette node
+Charles,person,isen,studied,ecole,to complete,Pas de description actuelle pour cette node
+Logan Mars,person,kyndryl,works,entreprise,to complete,Pas de description actuelle pour cette node
+Yohan Bonnet,person,kyndryl,works,entreprise,to complete,Pas de description actuelle pour cette node
+Yohan Bonnet,person,scout,works,association,to complete,Pas de description actuelle pour cette node
+epita,ecole,CTI,audited_by,association,"ecole auditée à paris (2j), 1j à lyon en présentiel & 1j à toulouse en distanciel",Pas de description actuelle pour cette node
+test_name_school,ecole,isen,test_link,ecole,propertie to complete,Pas de description actuelle pour cette node
+Elisa Lebellegard,person,isen,studied,ecole,"Présidente Capisen juste 2 promo après moi, juste après bertille. est partie à dublin pour un semestre à l'étranger en M1 (2023-2024)",Pas de description actuelle pour cette node
+Elisa Lebellegard,person,capisen,worked,association,"Présidente Capisen juste 2 promo après moi, juste après bertille. est partie à dublin pour un semestre à l'étranger en M1 (2023-2024)",Pas de description actuelle pour cette node
+Marie Allaire,person,isen,studied,ecole,to complete,Pas de description actuelle pour cette node
+Marie Allaire,person,capisen,worked,association,to complete,Pas de description actuelle pour cette node
+Clement Yziquel,person,isen,studied,ecole,to complete,Pas de description actuelle pour cette node
+Clement Yziquel,person,capisen,worked,association,to complete,Pas de description actuelle pour cette node
+Orlane Le Chanu,person,isen,studied,ecole,to complete,Pas de description actuelle pour cette node
+Orlane Le Chanu,person,capisen,worked,association,to complete,Pas de description actuelle pour cette node
+Léa Travers,person,isen,studied,ecole,to complete,Pas de description actuelle pour cette node
+Léa Travers,person,capisen,worked,association,to complete,Pas de description actuelle pour cette node
+Dairine Marcheix,person,kyndryl,worked,entreprise,to complete,Pas de description actuelle pour cette node
+Nicolas Menard,person,capisen,worked,association,to complete,Pas de description actuelle pour cette node
+Nicolas Menard,person,isen,studied,ecole,to complete,Pas de description actuelle pour cette node
+Nicolas Menard,person,ai isen,works,association,to complete,Pas de description actuelle pour cette node
+Nicolas Menard,person,CTI,worked,association,to complete,Pas de description actuelle pour cette node
+Lierre,person,Yohan Bonnet,friend,person,to complete,to complete
+Lierre,person,reims,rencontré à,lieu,to complete,Pas de description actuelle pour cette node
+Pascal Triboulot,person,CTI,works,association,to complete,Pas de description actuelle pour cette node
+Pascal Triboulot,person,ISI,audited,ecole,to complete,Ecole auditée à côté de Tunis pendant 3j
+Sylvain Goussot,person,epita,directeur general national,ecole,to complete,"ecole auditée à paris (2j), 1j à lyon en présentiel & 1j à toulouse en distanciel"
+Claire Lecoq,person,epita,directrice general national,ecole,to complete,"ecole auditée à paris (2j), 1j à lyon en présentiel & 1j à toulouse en distanciel"
+Evelyne Rebut,person,epita,directrice site de toulouse,ecole,to complete,"ecole auditée à paris (2j), 1j à lyon en présentiel & 1j à toulouse en distanciel"
+Xavier Olagne,person,epita,auditeur principal,ecole,to complete,"ecole auditée à paris (2j), 1j à lyon en présentiel & 1j à toulouse en distanciel"
+Xavier Olagne,person,CTI,membre permanent,association,to complete,Pas de description actuelle pour cette node
+Fabrice Dubost,person,epita,auditeur ,ecole,to complete,"ecole auditée à paris (2j), 1j à lyon en présentiel & 1j à toulouse en distanciel"
+Fabrice Dubost,person,grenoble,habite à,lieu,to complete,Pas de description actuelle pour cette node
+Fabrice Dubost,person,capgemini,en mi-temps,entreprise,to complete,Pas de description actuelle pour cette node
+Noel,person,epita,auditeur,ecole,to complete,"ecole auditée à paris (2j), 1j à lyon en présentiel & 1j à toulouse en distanciel"
+Fatiha,person,epita,auditrice,ecole,to complete,"ecole auditée à paris (2j), 1j à lyon en présentiel & 1j à toulouse en distanciel"
+Fatiha,person,isen,auditrice,ecole,to complete,Pas de description actuelle pour cette node
+Louis Romain,person,epita,élève et prof ,ecole,to complete,"ecole auditée à paris (2j), 1j à lyon en présentiel & 1j à toulouse en distanciel"
+Anna,person,Yohan Bonnet,friend,person,to complete,to complete
+Anna,person,reims,rencontré à,lieu,to complete,Pas de description actuelle pour cette node
+Corentin,person,Yohan Bonnet,friend,person,to complete,to complete
+Corentin,person,reims,rencontré à,lieu,to complete,Pas de description actuelle pour cette node
+keriann,person,Yohan Bonnet,friend,person,to complete,to complete
+keriann,person,reims,rencontré à,lieu,to complete,Pas de description actuelle pour cette node
+Louise,person,Yohan Bonnet,friend,person,to complete,to complete
+Louise,person,reims,rencontré à,lieu,to complete,Pas de description actuelle pour cette node
+ISI,ecole,CTI,audit,association,Ecole auditée à côté de Tunis pendant 3j,Pas de description actuelle pour cette node
+hugo,person,kyndryl,worked,entreprise,propriete_hugo,Pas de description actuelle pour cette node
+brest,lieu,sncf,link train,to_complete,propriete brest,Pas de description actuelle pour cette node
+Margaux Louvrier,person,kyndryl,Works,entreprise,Gomar la meuf bizarre,Pas de description actuelle pour cette node
+Dairine Marcheix,person,Margaux Louvrier,stagiaire,person,to complete,Gomar la meuf bizarre
