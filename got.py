@@ -7,7 +7,7 @@ import streamlit as st
 import pandas as pd
 import networkx as nx
 from pyvis.network import Network
-
+import re
 
 def simple_func_bis(physics): 
   nx_graph = nx.cycle_graph(10)
@@ -28,6 +28,98 @@ def simple_func_bis(physics):
     nt.show_buttons(filter_=['physics'])
   nt.show('test.html')
 
+def add_function_htmlTitle():
+    file_path = 'C:\\Users\\CharlesDepontieu\\test.html'
+
+    # Read the content of the HTML file
+    with open(file_path, 'r', encoding='windows-1252') as file:
+        content = file.read()
+
+    #print(content)
+        
+
+    # Define the pattern to match the old function and the replacement text
+    pattern = """// This method is responsible for drawing the graph, returns the drawn network"""
+    replacement = '''
+              function htmlTitle(html) {
+                  const container = document.createElement("div");
+                  container.innerHTML = html;
+                  return container;
+              }
+
+              // This method is responsible for drawing the graph, returns the drawn network
+    '''
+
+    # Perform the replacement
+    new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
+    # Write the modified content back to the file
+    with open(file_path, 'w') as file:
+        file.write(new_content)
+
+    return True
+
+# Function to replace title values with htmlTitle
+def replace_titles(match):
+    # Extract the part within the brackets of the DataSet
+    data_set_content = match.group(1)
+    # Define the replacement pattern for titles
+    updated_data_set_content = re.sub(
+        r'"title":\s*"([^"]*)"',
+        lambda m: f'"title": htmlTitle("{m.group(1)}")',
+        data_set_content
+    )
+    # Return the modified line with DataSet
+    return f'nodes = new vis.DataSet([{updated_data_set_content}]);'
+
+import re
+def use_htmlTitle():
+    # Define the path to your HTML file
+    file_path = 'C:\\Users\\CharlesDepontieu\\test.html'
+
+    # Read the content of the HTML file
+    with open(file_path, 'r') as file:
+        content = file.read()
+
+    # Define the regex pattern to match the nodes assignment line
+    pattern = r'nodes\s*=\s*new\s+vis\.DataSet\(\[(.*?)\]\);'
+
+    # Perform the replacement
+    new_content = re.sub(pattern, replace_titles, content, flags=re.DOTALL)
+
+    # Write the modified content back to the file
+    with open(file_path, 'w') as file:
+        file.write(new_content)
+
+
+def add_function_htmlTitle():
+    file_path = 'C:\\Users\\CharlesDepontieu\\test.html'
+
+    # Read the content of the HTML file
+    with open(file_path, 'r') as file:
+        content = file.read()
+
+    # Define the pattern to match the old function and the replacement text
+    pattern = """// This method is responsible for drawing the graph, returns the drawn network"""
+    replacement = '''
+                  function htmlTitle(html) {
+                    const container = document.createElement("div");
+                    container.innerHTML = html;
+                    return container;
+                  }
+
+                  // This method is responsible for drawing the graph, returns the drawn network
+    '''
+
+    # Perform the replacement
+    new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
+    # Write the modified content back to the file
+    with open(file_path, 'w') as file:
+        file.write(new_content)
+
+    return True
+
 def simple_func(hierarchical=False): 
     #df = pd.read_csv("C:\\Users\\CharlesDepontieu\\streamlit_network\\neo4j_database.csv", sep=",", header=0)
     df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQL41ALXABaTA1_5UI0jVyVOoavBwrBaMUMjZlZ4sx4yHt9KCwDkOx_URPPfxuA2A/pub?gid=1772947737&single=true&output=csv", sep=",", header=0)
@@ -37,7 +129,7 @@ def simple_func(hierarchical=False):
         cdn_resources="remote",
         bgcolor="#222222",
         font_color="white",
-        height="750px",
+        height="900px",
         width="100%",
         layout=hierarchical
     )
@@ -114,30 +206,71 @@ def simple_func(hierarchical=False):
     # Display the graph
     net.show("test.html")
 
-    html_file = "test.html"
-    with open(html_file, 'r') as file:
-        html_content = file.read()
+def add_div_display_info_node():
+    file_path = 'C:\\Users\\CharlesDepontieu\\test.html'
 
-    # JavaScript for handling click events
-    click_js = """
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function() {
-            var network = document.querySelector("#mynetwork");
-            network.onclick = function(params) {
-                var nodeId = this.getEventPosition(params).nodes[0];
-                var node = this.body.data.nodes.get(nodeId);
-                if (node) {
-                    alert('Node clicked: ' + node.label + '\\nTitle: ' + node.title);
+    # Read the content of the HTML file
+    with open(file_path, 'r', encoding='windows-1252') as file:
+        content = file.read()
+
+    #print(content)
+    
+    # Define the pattern to match the old function and the replacement text
+    pattern = r'<div id="mynetwork" class="card-body"></div>\s*</div>'
+    replacement = '''
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+        <div id="nodeInfo">Click on a node to see details here.</div>
+        '''
+
+    # Perform the replacement
+    new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
+    # Write the modified content back to the file
+    with open(file_path, 'w') as file:
+        file.write(new_content)
+
+    return True
+
+    
+
+def add_onclick_node_event():
+    file_path = 'C:\\Users\\CharlesDepontieu\\test.html'
+
+    # Read the content of the HTML file
+    with open(file_path, 'r', encoding='windows-1252') as file:
+        content = file.read()
+
+    #print(content)
+    
+    # Define the pattern to match the old function and the replacement text
+    pattern = r"""drawGraph\(\);"""
+    replacement = '''
+              drawGraph();
+              // Step 2: Add an event listener for the click event
+              network.on('click', function(params) {
+                if (params.nodes.length > 0) {
+                  var clickedNodeId = params.nodes[0];
+                  var clickedNode = nodes.get(clickedNodeId);
+
+                  // Update the display section with the clicked node information
+                  var nodeInfoDiv = document.getElementById('nodeInfo');
+                  nodeInfoDiv.innerHTML = `
+                    <h3>Node Information</h3>
+                    <p><strong>Nom:</strong> ${clickedNode.label}</p>
+                    <p><strong>Informations:</strong> ${clickedNode.title.innerHTML}</p>
+                  `;
                 }
-            };
-        });
-    </script>
-    """
+              });    
+              '''
 
-    # Insert the JavaScript before the closing </body> tag
-    html_content = html_content.replace("</body>", click_js + "</body>")
+    # Perform the replacement
+    new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
 
-    # Write the modified HTML content back to the file
-    with open(html_file, 'w') as file:
-        file.write(html_content)
+    # Write the modified content back to the file
+    with open(file_path, 'w') as file:
+        file.write(new_content)
 
+    return True
+
+    

@@ -51,9 +51,14 @@ if password == "charles":
     hierachical_display=st.sidebar.selectbox('Hierarchical display ?',(True, False))
     got.simple_func(hierachical_display)
 
+    got.add_function_htmlTitle()
+    got.use_htmlTitle()
+    got.add_div_display_info_node()
+    got.add_onclick_node_event()
+
     HtmlFile = open("test.html", 'r')#, encoding='utf-8')
     source_code = HtmlFile.read() 
-    components.html(source_code, height = 900,width=900)
+    components.html(source_code, height = 1200,width=900, scrolling=True)
 
 
   #got.got_func(physics)
