@@ -28,12 +28,12 @@ def simple_func_bis(physics):
     nt.show_buttons(filter_=['physics'])
   nt.show('test.html')
 
-def add_function_htmlTitle():
+def add_function_htmlTitle(content):
     file_path = 'test.html'
-
+    print(f"\n\n\n---------------\n{content}\n--------------------\n\n\n")
     # Read the content of the HTML file
-    with open(file_path, 'r', encoding='windows-1252') as file:
-        content = file.read()
+    #with open(file_path, 'r', encoding='windows-1252') as file:
+        #content = file.read()
 
     #print(content)
         
@@ -49,15 +49,15 @@ def add_function_htmlTitle():
 
               // This method is responsible for drawing the graph, returns the drawn network
     '''
-
+    
     # Perform the replacement
     new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
 
     # Write the modified content back to the file
-    with open(file_path, 'w') as file:
-        file.write(new_content)
+    #with open(file_path, 'w') as file:
+        #file.write(new_content)
 
-    return True
+    return new_content
 
 # Function to replace title values with htmlTitle
 def replace_titles(match):
@@ -73,13 +73,13 @@ def replace_titles(match):
     return f'nodes = new vis.DataSet([{updated_data_set_content}]);'
 
 import re
-def use_htmlTitle():
+def use_htmlTitle(content):
     # Define the path to your HTML file
     file_path = 'test.html'
 
     # Read the content of the HTML file
-    with open(file_path, 'r') as file:
-        content = file.read()
+    #with open(file_path, 'r') as file:
+        #content = file.read()
 
     # Define the regex pattern to match the nodes assignment line
     pattern = r'nodes\s*=\s*new\s+vis\.DataSet\(\[(.*?)\]\);'
@@ -88,16 +88,17 @@ def use_htmlTitle():
     new_content = re.sub(pattern, replace_titles, content, flags=re.DOTALL)
 
     # Write the modified content back to the file
-    with open(file_path, 'w') as file:
-        file.write(new_content)
+    #with open(file_path, 'w') as file:
+        #file.write(new_content)
+    return new_content
 
 
-def add_function_htmlTitle():
+def add_function_htmlTitle(content):
     file_path = 'test.html'
 
     # Read the content of the HTML file
-    with open(file_path, 'r') as file:
-        content = file.read()
+    #with open(file_path, 'r') as file:
+        #content = file.read()
 
     # Define the pattern to match the old function and the replacement text
     pattern = """// This method is responsible for drawing the graph, returns the drawn network"""
@@ -115,10 +116,10 @@ def add_function_htmlTitle():
     new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
 
     # Write the modified content back to the file
-    with open(file_path, 'w') as file:
-        file.write(new_content)
+    #with open(file_path, 'w') as file:
+        #file.write(new_content)
 
-    return True
+    return new_content
 
 def simple_func(hierarchical=False): 
     #df = pd.read_csv("C:\\Users\\CharlesDepontieu\\streamlit_network\\neo4j_database.csv", sep=",", header=0)
@@ -205,14 +206,16 @@ def simple_func(hierarchical=False):
 
     # Display the graph
     net.show("test.html")
-    return 
 
-def add_div_display_info_node():
+    html_file = net.generate_html()
+    return html_file
+
+def add_div_display_info_node(content):
     file_path = 'test.html'
 
     # Read the content of the HTML file
-    with open(file_path, 'r', encoding='windows-1252') as file:
-        content = file.read()
+    #with open(file_path, 'r', encoding='windows-1252') as file:
+        #content = file.read()
 
     #print(content)
     
@@ -228,19 +231,19 @@ def add_div_display_info_node():
     new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
 
     # Write the modified content back to the file
-    with open(file_path, 'w') as file:
-        file.write(new_content)
+    #with open(file_path, 'w') as file:
+        #file.write(new_content)
 
-    return True
+    return new_content
 
     
 
-def add_onclick_node_event():
+def add_onclick_node_event(content):
     file_path = 'test.html'
 
     # Read the content of the HTML file
-    with open(file_path, 'r', encoding='windows-1252') as file:
-        content = file.read()
+    #with open(file_path, 'r', encoding='windows-1252') as file:
+        #content = file.read()
 
     #print(content)
     
@@ -269,9 +272,9 @@ def add_onclick_node_event():
     new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
 
     # Write the modified content back to the file
-    with open(file_path, 'w') as file:
-        file.write(new_content)
+    #with open(file_path, 'w') as file:
+        #file.write(new_content)
 
-    return True
+    return new_content
 
     
