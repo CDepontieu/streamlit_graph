@@ -53,7 +53,7 @@ if password == "charles":
     smartphone = st.checkbox("Smartphone display")
     if smartphone : 
       height_input ="800"
-      width_input_px=400
+      width_input_px=350
     else:
       height_input = "900"
       width_input_px = 900
