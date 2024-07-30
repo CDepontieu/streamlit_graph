@@ -29,7 +29,7 @@ def simple_func_bis(physics):
   nt.show('test.html')
 
 def add_function_htmlTitle():
-    file_path = 'C:\\Users\\CharlesDepontieu\\test.html'
+    file_path = 'test.html'
 
     # Read the content of the HTML file
     with open(file_path, 'r', encoding='windows-1252') as file:
@@ -75,7 +75,7 @@ def replace_titles(match):
 import re
 def use_htmlTitle():
     # Define the path to your HTML file
-    file_path = 'C:\\Users\\CharlesDepontieu\\test.html'
+    file_path = 'test.html'
 
     # Read the content of the HTML file
     with open(file_path, 'r') as file:
@@ -93,7 +93,7 @@ def use_htmlTitle():
 
 
 def add_function_htmlTitle():
-    file_path = 'C:\\Users\\CharlesDepontieu\\test.html'
+    file_path = 'test.html'
 
     # Read the content of the HTML file
     with open(file_path, 'r') as file:
@@ -205,9 +205,10 @@ def simple_func(hierarchical=False):
 
     # Display the graph
     net.show("test.html")
+    return 
 
 def add_div_display_info_node():
-    file_path = 'C:\\Users\\CharlesDepontieu\\test.html'
+    file_path = 'test.html'
 
     # Read the content of the HTML file
     with open(file_path, 'r', encoding='windows-1252') as file:
@@ -235,7 +236,7 @@ def add_div_display_info_node():
     
 
 def add_onclick_node_event():
-    file_path = 'C:\\Users\\CharlesDepontieu\\test.html'
+    file_path = 'test.html'
 
     # Read the content of the HTML file
     with open(file_path, 'r', encoding='windows-1252') as file:
