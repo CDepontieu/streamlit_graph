@@ -121,7 +121,7 @@ def add_function_htmlTitle(content):
 
     return new_content
 
-def simple_func(hierarchical=False): 
+def simple_func(hierarchical=False, height_input="900", width_input="100"): 
     #df = pd.read_csv("C:\\Users\\CharlesDepontieu\\streamlit_network\\neo4j_database.csv", sep=",", header=0)
     df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQL41ALXABaTA1_5UI0jVyVOoavBwrBaMUMjZlZ4sx4yHt9KCwDkOx_URPPfxuA2A/pub?gid=1772947737&single=true&output=csv", sep=",", header=0)
     net = Network(
@@ -130,8 +130,8 @@ def simple_func(hierarchical=False):
         cdn_resources="remote",
         bgcolor="#222222",
         font_color="white",
-        height="900px",
-        width="100%",
+        height=height_input+"px",
+        width=width_input+"%",
         layout=hierarchical
     )
 
@@ -205,7 +205,7 @@ def simple_func(hierarchical=False):
       #net.show_buttons(filter_=['physics'])
 
     # Display the graph
-    # net.show("test.html")
+    #net.show("test.html")
 
     html_file = net.generate_html()
     return html_file

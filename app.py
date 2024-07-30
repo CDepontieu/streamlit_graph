@@ -49,17 +49,25 @@ if password == "charles":
 
   if option=='graph':
     hierachical_display=st.sidebar.selectbox('Hierarchical display ?',(True, False))
-    Htmlfile = got.simple_func(hierachical_display)
+    
+    smartphone = st.checkbox("Smartphone display")
+    if smartphone : 
+      height_input ="800"
+      width_input_px=400
+    else:
+      height_input = "900"
+      width_input_px = 900
 
+    Htmlfile = got.simple_func(hierachical_display, height_input)
 
     Htmlfile = got.add_function_htmlTitle(Htmlfile)
     Htmlfile = got.use_htmlTitle(Htmlfile)
     Htmlfile = got.add_div_display_info_node(Htmlfile)
     Htmlfile = got.add_onclick_node_event(Htmlfile)
-    
+
     #HtmlFile = open("test.html", 'r')#, encoding='utf-8')
     #source_code = Htmlfile.read() 
-    components.html(Htmlfile, height = 1200,width=900, scrolling=True)
+    components.html(Htmlfile, height = int(height_input)*1.6,width=width_input_px, scrolling=True)
 
 
   #got.got_func(physics)
