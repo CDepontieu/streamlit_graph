@@ -205,7 +205,7 @@ def simple_func(hierarchical=False):
       #net.show_buttons(filter_=['physics'])
 
     # Display the graph
-    net.show("test.html")
+    # net.show("test.html")
 
     html_file = net.generate_html()
     return html_file
