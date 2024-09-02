@@ -47,21 +47,9 @@ authenticator.login()
 
 import time
 if st.session_state['authentication_status']:
-    authenticator.logout()
-    st.write(f'Welcome *{st.session_state["name"]}*')
-    st.title('Some content')
-elif st.session_state['authentication_status'] is False:
-    time.sleep(5)
-    st.error('Username/password is incorrect')
-elif st.session_state['authentication_status'] is None:
-    time.sleep(5)
-    st.warning('Please enter your username and password')
-
-################## RAJOUT SEPTEMBRE 2024 ##################
-
-password = st.text_input("Test application")
-
-if password == "charles":
+  authenticator.logout()
+  st.write(f'Welcome *{st.session_state["name"]}*')
+  st.title('Some content')
 
   st.sidebar.title('Choose your favorite Graph')
   option=st.sidebar.selectbox('select graph',('graph','excel'))
@@ -125,3 +113,9 @@ if password == "charles":
     #HtmlFile = open("karate.html", 'r', encoding='utf-8')
     #source_code = HtmlFile.read() 
     #components.html(source_code, height = 1200,width=1000)
+elif st.session_state['authentication_status'] is False:
+    time.sleep(5)
+    st.error('Username/password is incorrect')
+elif st.session_state['authentication_status'] is None:
+    time.sleep(5)
+    st.warning('Please enter your username and password')
