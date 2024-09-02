@@ -23,8 +23,8 @@ import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
 
-with open('config.yaml') as file:
-    config = yaml.load(file, Loader=SafeLoader)
+#with open('C:\\Users\\CharlesDepontieu\\streamlit_graph_septembre\\streamlit_graph\\config.yaml') as file:
+    #config = yaml.load(file, Loader=SafeLoader)
 
 # https://discuss.streamlit.io/t/cannot-import-name-hasher-from-streamlit-authenticator/65675
 #from streamlit_authenticator.utilities.hasher import Hasher
@@ -35,27 +35,27 @@ with open('config.yaml') as file:
 # Pre-hashing all plain text passwords once
 # Hasher.hash_passwords(config['credentials'])
 
-authenticator = stauth.Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days'],
-    config['pre-authorized']
-)
+#authenticator = stauth.Authenticate(
+    #config['credentials'],
+    #config['cookie']['name'],
+    #config['cookie']['key'],
+    #config['cookie']['expiry_days'],
+    #config['pre-authorized']
+#)
 
-authenticator.login()
+#authenticator.login()
 
 import time
-if st.session_state['authentication_status']:
-    authenticator.logout()
-    st.write(f'Welcome *{st.session_state["name"]}*')
-    st.title('Some content')
-elif st.session_state['authentication_status'] is False:
-    time.sleep(5)
-    st.error('Username/password is incorrect')
-elif st.session_state['authentication_status'] is None:
-    time.sleep(5)
-    st.warning('Please enter your username and password')
+#if st.session_state['authentication_status']:
+    #authenticator.logout()
+    #st.write(f'Welcome *{st.session_state["name"]}*')
+    #st.title('Some content')
+#elif st.session_state['authentication_status'] is False:
+    #time.sleep(5)
+    #st.error('Username/password is incorrect')
+#elif st.session_state['authentication_status'] is None:
+    #time.sleep(5)
+    #st.warning('Please enter your username and password')
 
 ################## RAJOUT SEPTEMBRE 2024 ##################
 
