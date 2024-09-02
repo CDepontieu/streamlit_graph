@@ -3,3 +3,4 @@ networkx
 streamlit
 pyvis
 pandas
+streamlit-authenticator
