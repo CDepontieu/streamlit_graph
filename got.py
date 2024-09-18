@@ -124,6 +124,10 @@ def add_function_htmlTitle(content):
 def simple_func(url_csv, hierarchical=False, height_input="900", width_input="100"): 
     #df = pd.read_csv("C:\\Users\\CharlesDepontieu\\streamlit_network\\neo4j_database.csv", sep=",", header=0)
     df = pd.read_csv(url_csv, sep=",", header=0)
+  
+    # Function to replace all quotes with space (les descriptions du csv comprenant des " et ' font buguer l'affichage
+    df = df.replace({'"': ' ', "'": ' '}, regex=True)
+  
     #### reorder new dataframe to old dataframe schema
     df = df.rename(columns={'Nom': 'Name', 'Node Label': 'node label (normé)'})
     df = df[['Name', 'node label (normé)', 'linked to (normé)', 'type_of_link (normé)', 'label_linked_to (normé)', 'Properties_nom', 'Properties_linked_to']]
