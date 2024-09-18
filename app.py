@@ -61,11 +61,12 @@ if st.session_state['authentication_status']:
   #from streamlit_gsheets import GSheetsConnection
   import pandas as pd
   import streamlit.components.v1 as components
+  url_csv = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQL41ALXABaTA1_5UI0jVyVOoavBwrBaMUMjZlZ4sx4yHt9KCwDkOx_URPPfxuA2A/pub?gid=1772947737&single=true&output=csv"
 
 
 
   if option=='excel':
-    df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQL41ALXABaTA1_5UI0jVyVOoavBwrBaMUMjZlZ4sx4yHt9KCwDkOx_URPPfxuA2A/pub?gid=1772947737&single=true&output=csv", sep=",", header=0)
+    df = pd.read_csv(url_csv, sep=",", header=0)
     st.dataframe(df)
     # Create a connection object.
     #conn = st.connection("gsheets", type=GSheetsConnection)
@@ -86,7 +87,7 @@ if st.session_state['authentication_status']:
       height_input = "900"
       width_input_px = 900
 
-    Htmlfile = got.simple_func(hierachical_display, height_input)
+    Htmlfile = got.simple_func(hierachical_display, height_input, url_csv=url_csv)
 
     Htmlfile = got.add_function_htmlTitle(Htmlfile)
     Htmlfile = got.use_htmlTitle(Htmlfile)
