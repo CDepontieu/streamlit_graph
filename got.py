@@ -121,9 +121,10 @@ def add_function_htmlTitle(content):
 
     return new_content
 
-def simple_func(hierarchical=False, height_input="900", width_input="100"): 
+def simple_func(hierarchical=False, height_input="900", width_input="100", url_csv): 
     #df = pd.read_csv("C:\\Users\\CharlesDepontieu\\streamlit_network\\neo4j_database.csv", sep=",", header=0)
-    df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQL41ALXABaTA1_5UI0jVyVOoavBwrBaMUMjZlZ4sx4yHt9KCwDkOx_URPPfxuA2A/pub?gid=1772947737&single=true&output=csv", sep=",", header=0)
+    df = pd.read_csv(url_csv, sep=",", header=0)
+    #"https://docs.google.com/spreadsheets/d/e/2PACX-1vQL41ALXABaTA1_5UI0jVyVOoavBwrBaMUMjZlZ4sx4yHt9KCwDkOx_URPPfxuA2A/pub?gid=1772947737&single=true&output=csv"
     net = Network(
         select_menu=True,
         filter_menu=True,
