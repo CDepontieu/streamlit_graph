@@ -79,6 +79,9 @@ if st.session_state['authentication_status']:
     components.iframe(iframe_src, height=1250)
     st.write("\nhello\n")
     st.components.v1.iframe(iframe_src, width=800, height=1250)
+    st.write("\nhellloo\n")
+
+    st.markdown("[Formulaire pour ajouter et modifier la base de donnée](https://docs.google.com/spreadsheets/d/1Nrml-VocDYtnUxcLhEZlWhdlNheN1DeSttGbOHCtFRg/edit?usp=sharing)")
 
     #df = conn.read()
 
