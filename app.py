@@ -71,17 +71,11 @@ if st.session_state['authentication_status']:
 
 
   if option=='excel':
+    st.markdown("[Formulaire pour ajouter et modifier la base de donnée](https://docs.google.com/spreadsheets/d/1Nrml-VocDYtnUxcLhEZlWhdlNheN1DeSttGbOHCtFRg/edit?usp=sharing)")
+
     df = pd.read_csv(url_csv, sep=",", header=0)
     st.dataframe(df)
-    # Create a connection object.
-    #conn = st.connection("gsheets", type=GSheetsConnection)
-    iframe_src = "https://docs.google.com/spreadsheets/d/1Nrml-VocDYtnUxcLhEZlWhdlNheN1DeSttGbOHCtFRg/edit?usp=sharing" #"https://docs.google.com/spreadsheets/d/10Ntz8ioCljJ6uJKox0Aj7YGkGfzIjwKi/edit?usp=sharing&ouid=117463936283670123491&rtpof=true&sd=true"
-    components.iframe(iframe_src, height=1250)
-    st.write("\nhello\n")
-    st.components.v1.iframe(iframe_src, width=800, height=1250)
-    st.write("\nhellloo\n")
-
-    st.markdown("[Formulaire pour ajouter et modifier la base de donnée](https://docs.google.com/spreadsheets/d/1Nrml-VocDYtnUxcLhEZlWhdlNheN1DeSttGbOHCtFRg/edit?usp=sharing)")
+    
 
     #df = conn.read()
 
