@@ -87,7 +87,7 @@ if st.session_state['authentication_status']:
     else:
       height_input = "900"
       width_input_px = 900
-    #( hierarchical=False, height_input="900", width_input="100", url_csv)
+    #( url_csv, hierarchical=False, height_input="900", width_input="100")
     Htmlfile = got.simple_func(url_csv, hierachical_display, height_input)
 
     Htmlfile = got.add_function_htmlTitle(Htmlfile)
