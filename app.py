@@ -71,7 +71,7 @@ if st.session_state['authentication_status']:
 
 
   if option=='excel':
-    st.markdown("[Formulaire pour ajouter et modifier la base de donnée](https://docs.google.com/spreadsheets/d/1Nrml-VocDYtnUxcLhEZlWhdlNheN1DeSttGbOHCtFRg/edit?usp=sharing)")
+    st.markdown("[Formulaire pour ajouter et modifier la base de données](https://docs.google.com/spreadsheets/d/1Nrml-VocDYtnUxcLhEZlWhdlNheN1DeSttGbOHCtFRg/edit?usp=sharing)")
 
     df = pd.read_csv(url_csv, sep=",", header=0)
     st.dataframe(df)
