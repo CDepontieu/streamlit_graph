@@ -211,7 +211,7 @@ def simple_func(url_csv, hierarchical=False, height_input="900", width_input="10
     net.from_nx(G)
 
     # rajout test physics le 27 septembre
-    net.show_buttons(filter_=['physics'])
+    #net.show_buttons(filter_=['physics'])
 
     # Show buttons for interaction
     #if physics:
