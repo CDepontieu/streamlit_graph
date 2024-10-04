@@ -43,7 +43,7 @@ authenticator = stauth.Authenticate(
     #config['pre-authorized']
 )
 
-name, authentication_status, username = authenticator.login('Login', 'main')
+name, authentication_status, username = authenticator.login('Login', 'sidebar')
 
 #authenticator.login()
 
