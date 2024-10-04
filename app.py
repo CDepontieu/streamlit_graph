@@ -39,11 +39,13 @@ authenticator = stauth.Authenticate(
     config['credentials'],
     config['cookie']['name'],
     config['cookie']['key'],
-    config['cookie']['expiry_days'],
-    config['pre-authorized']
+    config['cookie']['expiry_days']#,
+    #config['pre-authorized']
 )
 
-authenticator.login()
+name, authentication_status, username = authenticator.login('Login', 'main')
+
+#authenticator.login()
 
 import time
 if st.session_state['authentication_status']:
