@@ -6,8 +6,8 @@ credentials:
       password: $2b$12$.y/JFVkPTyVh7Vl4PIqp2.ffGjkqTBef/kdCiuZanYjnFapZtg4EC
 cookie:
   expiry_days: 0
-  key: some_signature_key # Must be string
-  name: some_cookie_name
+  key: "some_signature_key" # Must be string
+  name: "some_cookie_name"
 pre-authorized:
   emails:
   - test@test.com
