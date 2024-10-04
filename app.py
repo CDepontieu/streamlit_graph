@@ -43,9 +43,9 @@ authenticator = stauth.Authenticate(
     #config['pre-authorized']
 )
 
-name, authentication_status, username = authenticator.login('Login', 'sidebar')
+#name, authentication_status, username = authenticator.login('Login', 'sidebar')
 
-#authenticator.login()
+authenticator.login()
 
 import time
 if st.session_state['authentication_status']:
