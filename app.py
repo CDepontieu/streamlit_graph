@@ -97,6 +97,23 @@ if st.session_state['authentication_status']:
     df = pd.read_csv(url_csv, sep=",", header=0)
     st.dataframe(df)
 
+    top_nodes = find_top_two_nodes_with_most_relations(df)
+    # Create a select box for node selection
+    node_options = [node[0] for node in top_nodes]  # Extract node names
+    selected_node = st.selectbox("Select a node to filter by:", node_options)
+
+    # Filter DataFrame based on selected node
+    filtered_df = filter_by_node(selected_node, df)
+
+    # Display the filtered DataFrame
+    st.write(f"Filtered results for node: {selected_node}")
+    st.dataframe(filtered_df)
+
+    # Display top nodes
+    st.write("Top two nodes with the most relations:")
+    for node in top_nodes:
+        st.write(f"Node: {node[0]}, Relations Count: {node[1]}")
+
       
     Htmlfile = got.simple_func(url_csv, hierachical_display, height_input)
 
