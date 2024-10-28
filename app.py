@@ -94,9 +94,14 @@ if st.session_state['authentication_status']:
       width_input_px = 900
     #( url_csv, hierarchical=False, height_input="900", width_input="100")
 
+    st.title('Hello Pyvis')
+
     df = pd.read_csv(url_csv, sep=",", header=0)
     st.dataframe(df)
 
+    st.title('Hello Pyvis')
+
+      
     top_nodes = find_top_two_nodes_with_most_relations(df)
     # Create a select box for node selection
     node_options = [node[0] for node in top_nodes]  # Extract node names
