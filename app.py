@@ -97,51 +97,59 @@ if st.session_state['authentication_status']:
 
     selected_mode_filter_dataframe = st.selectbox("Filtrer le df par:", ["mot_dans_description_node", "node"])
 
+    df = pd.read_csv(url_csv, sep=",", header=0)
+    #st.dataframe(df)
+      
     if selected_mode_filter_dataframe == "mot_dans_description_node":
         st.write("mot_dans_description_node")
+        # Add input for filtering by word
+        word_to_filter = st.text_input("Enter a word to filter rows by:")
+    
+        # If a word is entered, filter the DataFrame
+        if word_to_filter:
+            filtered_by_word_df = got.filter_rows_by_word(word_to_filter, df)
+            st.write(f"Filtered results containing the word '{word_to_filter}':")
+            st.dataframe(filtered_by_word_df)
+        
     else:
+        top_nodes = got.find_top_two_nodes_with_most_relations(df)
+        # Create a select box for node selection
+        # Create a select box for node selection with counts
+        node_options = [f"{node[0]} (Nombre de connexions: {node[1]})" for node in top_nodes]  # Format: Node (Count)
+        selected_node_str = st.selectbox("Select a node to filter by:", node_options)
+    
+        # Extract the node name from the selected option
+        selected_node = selected_node_str.split(" (Nombre de connexions:")[0]  # Get the node name without the count
+        # Filter DataFrame based on selected node
+        filtered_df = got.filter_by_node(selected_node, df)
+    
+        # Display the filtered DataFrame
+        st.write(f"Filtered results for node: {selected_node}")
+        st.dataframe(filtered_df)
+    
+        # Display top nodes
+        st.write("Top two nodes with the most relations:")
+        for node in top_nodes:
+            st.write(f"Node: {node[0]}, Relations Count: {node[1]}")
+        
         st.write("node")
+        
       
     st.title('Hello Pyvis')
 
-    df = pd.read_csv(url_csv, sep=",", header=0)
-    st.dataframe(df)
+    
 
     st.title('Hello Pyvis')
 
       
-    top_nodes = got.find_top_two_nodes_with_most_relations(df)
-    # Create a select box for node selection
-    # Create a select box for node selection with counts
-    node_options = [f"{node[0]} (Nombre de connexions: {node[1]})" for node in top_nodes]  # Format: Node (Count)
-    selected_node_str = st.selectbox("Select a node to filter by:", node_options)
-
-    # Extract the node name from the selected option
-    selected_node = selected_node_str.split(" (Nombre de connexions:")[0]  # Get the node name without the count
+    
     #print(f"\n -----------------------------------------------------\n this is the selected node : {selected_node}----------------------------------------\n")
     st.write(f"\n -----------------------------------------------------\n this is the selected node : {selected_node}----------------------------------------\n")
-    # Filter DataFrame based on selected node
-    filtered_df = got.filter_by_node(selected_node, df)
-
-    # Display the filtered DataFrame
-    st.write(f"Filtered results for node: {selected_node}")
-    st.dataframe(filtered_df)
-
-    # Display top nodes
-    st.write("Top two nodes with the most relations:")
-    for node in top_nodes:
-        st.write(f"Node: {node[0]}, Relations Count: {node[1]}")
+    
 
     st.write(f"\n -----------------------------------------------------\n")
 
-    # Add input for filtering by word
-    word_to_filter = st.text_input("Enter a word to filter rows by:")
-
-    # If a word is entered, filter the DataFrame
-    if word_to_filter:
-        filtered_by_word_df = got.filter_rows_by_word(word_to_filter, df)
-        st.write(f"Filtered results containing the word '{word_to_filter}':")
-        st.dataframe(filtered_by_word_df)
+    
 
 
       
