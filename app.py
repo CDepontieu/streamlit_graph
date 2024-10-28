@@ -98,9 +98,9 @@ if st.session_state['authentication_status']:
     selected_mode_filter_dataframe = st.selectbox("Filtrer le df par:", ["mot_dans_description_node", "node"])
 
     if selected_mode_filter_dataframe == "mot_dans_description_node":
-        st.write(mot_dans_description_node)
+        st.write("mot_dans_description_node")
     else:
-        st.write(node)
+        st.write("node")
       
     st.title('Hello Pyvis')
 
