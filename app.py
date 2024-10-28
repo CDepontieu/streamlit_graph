@@ -124,6 +124,18 @@ if st.session_state['authentication_status']:
     for node in top_nodes:
         st.write(f"Node: {node[0]}, Relations Count: {node[1]}")
 
+    st.write(f"\n -----------------------------------------------------\n")
+
+    # Add input for filtering by word
+    word_to_filter = st.text_input("Enter a word to filter rows by:")
+
+    # If a word is entered, filter the DataFrame
+    if word_to_filter:
+        filtered_by_word_df = got.filter_rows_by_word(word_to_filter, df)
+        st.write(f"Filtered results containing the word '{word_to_filter}':")
+        st.dataframe(filtered_by_word_df)
+
+
       
     ## Htmlfile = got.simple_func(url_csv, hierachical_display, height_input)
 
