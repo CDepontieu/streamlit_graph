@@ -131,23 +131,7 @@ if st.session_state['authentication_status']:
         st.write("Top two nodes with the most relations:")
         for node in top_nodes:
             st.write(f"Node: {node[0]}, Relations Count: {node[1]}")
-        
-        st.write("node")
-        
-      
-    st.title('Hello Pyvis')
-
-    
-
-    st.title('Hello Pyvis')
-
-      
-    
-    #print(f"\n -----------------------------------------------------\n this is the selected node : {selected_node}----------------------------------------\n")
-    st.write(f"\n -----------------------------------------------------\n this is the selected node : {selected_node}----------------------------------------\n")
-    
-
-    st.write(f"\n -----------------------------------------------------\n")
+                
 
     
 
