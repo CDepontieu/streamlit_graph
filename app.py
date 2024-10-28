@@ -104,8 +104,12 @@ if st.session_state['authentication_status']:
       
     top_nodes = got.find_top_two_nodes_with_most_relations(df)
     # Create a select box for node selection
-    node_options = [node[0] for node in top_nodes]  # Extract node names
-    selected_node = st.selectbox("Select a node to filter by:", node_options)
+    # Create a select box for node selection with counts
+    node_options = [f"{node[0]} (Count: {node[1]})" for node in top_nodes]  # Format: Node (Count)
+    selected_node_str = st.selectbox("Select a node to filter by:", node_options)
+
+    # Extract the node name from the selected option
+    selected_node = selected_node_str.split(" (Count:")[0]  # Get the node name without the count
 
     # Filter DataFrame based on selected node
     filtered_df = got.filter_by_node(selected_node, df)
