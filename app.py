@@ -83,7 +83,7 @@ if st.session_state['authentication_status']:
 
 
   if option=='graph':
-    hierachical_display=st.sidebar.selectbox('Hierarchical display ?',(True, False))
+    hierachical_display=st.sidebar.selectbox('Hierarchical display ?',(False, True))
     
     smartphone = st.checkbox("Smartphone display")
     if smartphone : 
