@@ -110,6 +110,7 @@ if st.session_state['authentication_status']:
             filtered_by_word_df = got.filter_rows_by_word(word_to_filter, df)
             #st.write(f"Filtered results containing the word '{word_to_filter}':")
             st.dataframe(filtered_by_word_df)
+            filtered_df = filtered_by_word_df.copy()
         
     elif selected_mode_filter_dataframe == "node":
         top_nodes = got.find_top_two_nodes_with_most_relations(df)
@@ -133,6 +134,7 @@ if st.session_state['authentication_status']:
             #st.write(f"Node: {node[0]}, Relations Count: {node[1]}")
     elif selected_mode_filter_dataframe =="Toute_la_database":
         st.write("all database selected")
+        filtered_df = df.copy()
         
         
                 
@@ -141,16 +143,16 @@ if st.session_state['authentication_status']:
 
 
       
-    ## Htmlfile = got.simple_func(url_csv, hierachical_display, height_input)
+    Htmlfile = got.simple_func(filtered_df, hierachical_display, height_input)
 
-    ## Htmlfile = got.add_function_htmlTitle(Htmlfile)
-    ## Htmlfile = got.use_htmlTitle(Htmlfile)
-    ## Htmlfile = got.add_div_display_info_node(Htmlfile)
-    ## Htmlfile = got.add_onclick_node_event(Htmlfile)
+    Htmlfile = got.add_function_htmlTitle(Htmlfile)
+    Htmlfile = got.use_htmlTitle(Htmlfile)
+    Htmlfile = got.add_div_display_info_node(Htmlfile)
+    Htmlfile = got.add_onclick_node_event(Htmlfile)
 
     #HtmlFile = open("test.html", 'r')#, encoding='utf-8')
     #source_code = Htmlfile.read() 
-    ## components.html(Htmlfile, height = int(height_input)*1.6,width=width_input_px, scrolling=True)
+    components.html(Htmlfile, height = int(height_input)*1.6,width=width_input_px, scrolling=True)
 
 
   #got.got_func(physics)
