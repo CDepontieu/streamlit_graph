@@ -110,8 +110,8 @@ if st.session_state['authentication_status']:
 
     # Extract the node name from the selected option
     selected_node = selected_node_str.split(" (Count:")[0]  # Get the node name without the count
-    print(f"\n -----------------------------------------------------\n this is the selected node : {selected_node}----------------------------------------\n")
-
+    #print(f"\n -----------------------------------------------------\n this is the selected node : {selected_node}----------------------------------------\n")
+    st.write(f"\n -----------------------------------------------------\n this is the selected node : {selected_node}----------------------------------------\n")
     # Filter DataFrame based on selected node
     filtered_df = got.filter_by_node(selected_node, df)
 
