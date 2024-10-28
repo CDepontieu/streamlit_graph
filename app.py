@@ -95,7 +95,7 @@ if st.session_state['authentication_status']:
     #( url_csv, hierarchical=False, height_input="900", width_input="100")
 
 
-    selected_mode_filter_dataframe = st.selectbox("Filtrer le df par:", ["mot_dans_description_node", "node"])
+    selected_mode_filter_dataframe = st.selectbox("Filtrer le df par:", ["mot_dans_description_node", "node","Toute_la_database"])
 
     df = pd.read_csv(url_csv, sep=",", header=0)
     #st.dataframe(df)
@@ -111,7 +111,7 @@ if st.session_state['authentication_status']:
             #st.write(f"Filtered results containing the word '{word_to_filter}':")
             st.dataframe(filtered_by_word_df)
         
-    else:
+    elif selected_mode_filter_dataframe == "node":
         top_nodes = got.find_top_two_nodes_with_most_relations(df)
         # Create a select box for node selection
         # Create a select box for node selection with counts
@@ -131,6 +131,10 @@ if st.session_state['authentication_status']:
         #st.write("Top two nodes with the most relations:")
         #for node in top_nodes:
             #st.write(f"Node: {node[0]}, Relations Count: {node[1]}")
+    elif selected_mode_filter_dataframe =="Toute_la_database":
+        st.write("all database selected")
+        
+        
                 
 
     
