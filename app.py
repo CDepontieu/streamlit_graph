@@ -144,16 +144,16 @@ if st.session_state['authentication_status']:
 
 
       
-    ## Htmlfile = got.simple_func(filtered_df, hierachical_display, height_input)
+    Htmlfile = got.simple_func(filtered_df, hierachical_display, height_input)
 
-    ## Htmlfile = got.add_function_htmlTitle(Htmlfile)
-    ## Htmlfile = got.use_htmlTitle(Htmlfile)
-    ## Htmlfile = got.add_div_display_info_node(Htmlfile)
-    ## Htmlfile = got.add_onclick_node_event(Htmlfile)
+    Htmlfile = got.add_function_htmlTitle(Htmlfile)
+    Htmlfile = got.use_htmlTitle(Htmlfile)
+    Htmlfile = got.add_div_display_info_node(Htmlfile)
+    Htmlfile = got.add_onclick_node_event(Htmlfile)
 
     #HtmlFile = open("test.html", 'r')#, encoding='utf-8')
     #source_code = Htmlfile.read() 
-    ## components.html(Htmlfile, height = int(height_input)*1.6,width=width_input_px, scrolling=True)
+    components.html(Htmlfile, height = int(height_input)*1.6,width=width_input_px, scrolling=True)
 
 
   #got.got_func(physics)
