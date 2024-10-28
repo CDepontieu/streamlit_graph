@@ -110,7 +110,7 @@ if st.session_state['authentication_status']:
             filtered_by_word_df = got.filter_rows_by_word(word_to_filter, df)
             #st.write(f"Filtered results containing the word '{word_to_filter}':")
             #st.dataframe(filtered_by_word_df)
-          filtered_df = filtered_by_word_df.copy()
+            filtered_df = filtered_by_word_df.copy()
         else:
             st.write("Merci d'entrer un mot pour filtrer le dataframe")
 
