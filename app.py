@@ -102,13 +102,13 @@ if st.session_state['authentication_status']:
     st.title('Hello Pyvis')
 
       
-    top_nodes = find_top_two_nodes_with_most_relations(df)
+    top_nodes = got.find_top_two_nodes_with_most_relations(df)
     # Create a select box for node selection
     node_options = [node[0] for node in top_nodes]  # Extract node names
     selected_node = st.selectbox("Select a node to filter by:", node_options)
 
     # Filter DataFrame based on selected node
-    filtered_df = filter_by_node(selected_node, df)
+    filtered_df = got.filter_by_node(selected_node, df)
 
     # Display the filtered DataFrame
     st.write(f"Filtered results for node: {selected_node}")
