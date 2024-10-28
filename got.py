@@ -289,5 +289,35 @@ def add_onclick_node_event(content):
         #file.write(new_content)
 
     return new_content
+############################################################# rajout filtre dataframe ##############################
+from collections import Counter
+# Define the function to count relations
 
+def find_top_two_nodes_with_most_relations(df):
+    # Create a Counter to store the relation count for each node
+    relations_count = Counter()
+
+    # Count relations for 'Nom' and 'linked to (normé)' columns
+    relations_count.update(df['Nom'])
+    relations_count.update(df['linked to (normé)'])
+
+    # Find the two nodes with the highest counts
+    top_two_nodes = relations_count.most_common(3)
+    
+    return top_two_nodes
+
+# Define the function to filter by node name
+def filter_by_node(node_name, df):
+    # Filter where the node appears in either 'Nom' or 'linked to (normé)'
+    filtered_df = df[(df['Nom'] == node_name) | (df['linked to (normé)'] == node_name)]
+    
+    return filtered_df
+
+# Define the function to filter rows containing a specific word
+def filter_rows_by_word(word, df):
+    # Use a boolean mask to check for the word in each row and return only rows containing the word
+    mask = df.apply(lambda row: row.astype(str).str.contains(word, case=False, regex=False).any(), axis=1)
+    filtered_df = df[mask]
+    
+    return filtered_df
     
