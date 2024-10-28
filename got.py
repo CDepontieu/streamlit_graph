@@ -302,7 +302,7 @@ def find_top_two_nodes_with_most_relations(df):
     relations_count.update(df['linked to (normé)'])
 
     # Find the two nodes with the highest counts
-    top_two_nodes = relations_count.most_common(3)
+    top_two_nodes = relations_count.most_common(10)
     
     return top_two_nodes
 
