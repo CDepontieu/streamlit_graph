@@ -95,7 +95,7 @@ if st.session_state['authentication_status']:
     #( url_csv, hierarchical=False, height_input="900", width_input="100")
 
 
-    selected_mode_filter_dataframe = st.selectbox("Filtrer le df par:", mot_dans_description_node, node)
+    selected_mode_filter_dataframe = st.selectbox("Filtrer le df par:", ["mot_dans_description_node", "node"])
 
     #if selected_mode_filter_dataframe == mot_dans_description_node:
         #st.write(mot_dans_description_node)
