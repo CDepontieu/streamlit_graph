@@ -101,14 +101,14 @@ if st.session_state['authentication_status']:
     #st.dataframe(df)
       
     if selected_mode_filter_dataframe == "mot_dans_description_node":
-        st.write("mot_dans_description_node")
+        #st.write("mot_dans_description_node")
         # Add input for filtering by word
         word_to_filter = st.text_input("Enter a word to filter rows by:")
     
         # If a word is entered, filter the DataFrame
         if word_to_filter:
             filtered_by_word_df = got.filter_rows_by_word(word_to_filter, df)
-            st.write(f"Filtered results containing the word '{word_to_filter}':")
+            #st.write(f"Filtered results containing the word '{word_to_filter}':")
             st.dataframe(filtered_by_word_df)
         
     else:
@@ -124,13 +124,13 @@ if st.session_state['authentication_status']:
         filtered_df = got.filter_by_node(selected_node, df)
     
         # Display the filtered DataFrame
-        st.write(f"Filtered results for node: {selected_node}")
+        #st.write(f"Filtered results for node: {selected_node}")
         st.dataframe(filtered_df)
     
         # Display top nodes
-        st.write("Top two nodes with the most relations:")
-        for node in top_nodes:
-            st.write(f"Node: {node[0]}, Relations Count: {node[1]}")
+        #st.write("Top two nodes with the most relations:")
+        #for node in top_nodes:
+            #st.write(f"Node: {node[0]}, Relations Count: {node[1]}")
                 
 
     
