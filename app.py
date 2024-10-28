@@ -95,7 +95,7 @@ if st.session_state['authentication_status']:
     #( url_csv, hierarchical=False, height_input="900", width_input="100")
 
 
-    selected_mode_filter_dataframe = st.selectbox("Filtrer le df par:", ["mot_dans_description_node", "node","Toute_la_database"])
+    selected_mode_filter_dataframe = st.selectbox("Filtrer le df par:", ["mot_dans_description_node","Toute_la_database", "node"])
 
     df = pd.read_csv(url_csv, sep=",", header=0)
     #st.dataframe(df)
