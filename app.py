@@ -121,8 +121,13 @@ if st.session_state['authentication_status']:
         # Create a select box for node selection
         # Create a select box for node selection with counts
         node_options = [f"{node[0]} (Nombre de connexions: {node[1]})" for node in top_nodes]  # Format: Node (Count)
-        selected_node_str = st.selectbox("Select a node to filter by:", node_options)
-    
+
+        col1, col2 = st.columns(2)
+        with col1:
+            selected_node_str = st.selectbox("Select a node to filter by:", node_options)
+        with col2:
+            depth_analysis = st.selectbox("Profondeur des relations:", [1, 2, 3])
+        
         # Extract the node name from the selected option
         selected_node = selected_node_str.split(" (Nombre de connexions:")[0]  # Get the node name without the count
         # Filter DataFrame based on selected node
