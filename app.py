@@ -127,6 +127,7 @@ if st.session_state['authentication_status']:
         selected_node = selected_node_str.split(" (Nombre de connexions:")[0]  # Get the node name without the count
         # Filter DataFrame based on selected node
         filtered_df = got.filter_by_node(selected_node, df)
+        #filtered_df = got.filter_by_node(selected_node, df)
     
         # Display the filtered DataFrame
         #st.write(f"Filtered results for node: {selected_node}")
