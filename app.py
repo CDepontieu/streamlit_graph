@@ -131,6 +131,8 @@ if st.session_state['authentication_status']:
         # Extract the node name from the selected option
         selected_node = selected_node_str.split(" (Nombre de connexions:")[0]  # Get the node name without the count
         # Filter DataFrame based on selected node
+
+        st.write(f"depth_analysis : {depth_analysis}")
         filtered_df = got.filter_by_node(selected_node, df, depth_analysis)
         #filtered_df = got.filter_by_node(selected_node, df)
     
