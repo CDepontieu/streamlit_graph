@@ -308,11 +308,28 @@ def find_top_two_nodes_with_most_relations(df):
     return top_two_nodes
 
 # Define the function to filter by node name
-def filter_by_node(node_name, df):
+## def filter_by_node(node_name, df):
     # Filter where the node appears in either 'Nom' or 'linked to (normé)'
-    filtered_df = df[(df['Nom'] == node_name) | (df['linked to (normé)'] == node_name)]
+    ## filtered_df = df[(df['Nom'] == node_name) | (df['linked to (normé)'] == node_name)]
     
-    return filtered_df
+    ## return filtered_df
+def filter_by_node(node_name, df, relation_level=1):
+    # Initialize the set of nodes to explore, starting with the specified node
+    nodes_to_explore = {node_name}
+    # Initialize a DataFrame to hold the results
+    result_df = pd.DataFrame()
+
+    for level in range(relation_level):
+        # Filter the DataFrame for rows where the "Nom" or "linked to (normé)" is in nodes_to_explore
+        filtered_df = df[df['Nom'].isin(nodes_to_explore) | df['linked to (normé)'].isin(nodes_to_explore)]
+        
+        # Append the filtered results to result_df
+        result_df = pd.concat([result_df, filtered_df]).drop_duplicates().reset_index(drop=True)
+        
+        # Update the nodes to explore for the next level by adding newly found linked nodes
+        nodes_to_explore = set(filtered_df['Nom']).union(set(filtered_df['linked to (normé)']))
+
+    return result_df
 
 # Define the function to filter rows containing a specific word
 def filter_rows_by_word(word, df):
